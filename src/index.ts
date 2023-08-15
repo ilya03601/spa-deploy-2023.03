@@ -16,10 +16,11 @@ if (PRODUCTION) {
 
 document.body.addEventListener("click", (ev) => {
   if ((ev.target as HTMLElement).matches("a")) {
-    // const hash = (ev.target as HTMLAnchorElement).hash;
     ev.preventDefault();
 
-    console.log(ev);
+    if (!window.history) {
+      throw new Error('Your browsert doesn`t support History API');
+    }
 
     history.pushState({}, '', (<HTMLAnchorElement>ev.target).href)
 

@@ -19,7 +19,7 @@ document.body.addEventListener("click", (ev) => {
     ev.preventDefault();
 
     if (!window.history) {
-      throw new Error('Your browsert doesn`t support History API');
+      throw new Error('Your browser doesn`t support History API');
     }
 
     history.pushState({}, '', (<HTMLAnchorElement>ev.target).href)

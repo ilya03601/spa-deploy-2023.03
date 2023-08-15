@@ -17,7 +17,7 @@ const config: webpack.Configuration = {
     environment: {
       arrowFunction: false,
     },
-    // publicPath: '/',
+    publicPath: NODE_ENV === 'production' ? PREFIX : '/',
   },
   resolve: {
     extensions: [".js", ".ts"],
